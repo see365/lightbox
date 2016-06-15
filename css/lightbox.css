@@ -1,14 +1,106 @@
-#lightbox{
 
+#lightbox{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left:0;
+    top:0;
 }
 .m-lightbox-mask {
-    position: absolute;
+    position: fixed;
     left:0;
     top:0;
     z-index: 9001;
     background: #000000;
-    opacity: 0.6;
-    filter: alpha(opacity=60);
+    opacity: 0.5;
+    filter: alpha(opacity=50);
     width: 100%;
     height: 100%;
+}
+.m-lightbox-con{
+    position: fixed;
+    height: 260px;
+    left:50%;
+    top:50%;
+    z-index: 9002;
+    margin-left: -150px;
+    margin-top: -130px;
+    text-align: center;
+    overflow: hidden;
+    background: #000000;
+    border: 4px #ffffff solid;
+    transition: all 0.3s linear;
+}
+.m-lightbox-con img{
+    transition: all 0.3s linear;
+    width: auto;
+    height: auto;
+}
+.m-lightbox-info{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: #000000;
+    opacity: 0.5;
+    filter:alpha(opacity=50);
+    height: 50px;
+    text-align: left;
+    padding-left: 5px;
+}
+.m-lightbox-info h6{
+    margin: 0;
+    padding: 0;
+    height: 30px;
+    line-height: 30px;
+   color: #ffffff;
+}
+.m-lightbox-info p{
+    font-size: 12px;
+    margin: 0;
+    padding: 0;
+
+    color: #ffffff;
+}
+.m-lightbox-prev{
+    cursor: pointer;
+    position: absolute;
+    left: 8px;
+    top:100px;
+    width: 25px;
+    height: 22px;
+    background: url("../images/icon/prev.png") 0 0 no-repeat;
+    background-size: 25px 22px;
+}
+.m-lightbox-next{
+    cursor: pointer;
+    position: absolute;
+    right: 8px;
+    top:100px;
+    width: 25px;
+    height: 22px;
+    background: url("../images/icon/next.png") 0 0 no-repeat;
+    background-size: 25px 22px;
+}
+.m-lightbox-page{
+    position: absolute;
+    color: #ffffff;
+    right: 10px;
+    top: 10px;
+    opacity: 0.4;
+    filter: alpha(opacity=40);
+
+}
+.m-lightbox-close{
+    position: fixed;
+    top:15px;
+    right: 15px;
+    z-index: 9003;
+    cursor: pointer;
+    width: 27px;
+    height: 27px;
+    background: url("../images/icon/close.png") 0 0 no-repeat;
+}
+.z-closed{
+    display: none;
 }
