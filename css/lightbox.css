@@ -1,6 +1,5 @@
 
 #lightbox{
-    position: absolute;
     width: 100%;
     height: 100%;
     left:0;
@@ -19,22 +18,22 @@
 }
 .m-lightbox-con{
     position: fixed;
-    height: 260px;
+    height: 300px;
+    width: 300px;
     left:50%;
     top:50%;
     z-index: 9002;
     margin-left: -150px;
-    margin-top: -130px;
+    margin-top: -150px;
     text-align: center;
     overflow: hidden;
-    background: #000000;
-    border: 4px #ffffff solid;
-    transition: all 0.3s linear;
+    transition: all 0.6s ease-in-out;
 }
-.m-lightbox-con img{
-    transition: all 0.3s linear;
+.m-lightbox-img{
     width: auto;
     height: auto;
+    transition: all 0.6s ease-in-out;
+
 }
 .m-lightbox-info{
     position: absolute;
@@ -62,21 +61,67 @@
 
     color: #ffffff;
 }
+
+.m-lightbox-loading {
+    display: none;
+    position: absolute;
+    left: 0;
+    top:0;
+    width: 100%;
+    height: 100%;
+    background: #000000;
+}
+.m-lightbox-loading i{
+    position: absolute;
+    left: 50%;
+    top:50%;
+    width: 40px;
+    height: 40px;
+    margin-left: -20px;
+    margin-top: -20px;
+    background-color: #ffffff;
+    border-radius: 100%;
+    -webkit-animation: scaleout 1.0s infinite ease-in-out;
+    animation: scaleout 1.0s infinite ease-in-out;
+}
+@-webkit-keyframes scaleout {
+    0% { -webkit-transform: scale(0.0) }
+    100% {
+        -webkit-transform: scale(1.0);
+        opacity: 0;
+    }
+}
+
+@keyframes scaleout {
+    0% {
+        transform: scale(0.0);
+        -webkit-transform: scale(0.0);
+    } 100% {
+          transform: scale(1.0);
+          -webkit-transform: scale(1.0);
+          opacity: 0;
+      }
+}
 .m-lightbox-prev{
     cursor: pointer;
-    position: absolute;
+    position: fixed;
+    z-index: 9004;
+
     left: 8px;
-    top:100px;
+    top:50%;
     width: 25px;
     height: 22px;
+    margin-top: -11px;
     background: url("../images/icon/prev.png") 0 0 no-repeat;
     background-size: 25px 22px;
 }
 .m-lightbox-next{
     cursor: pointer;
-    position: absolute;
+    position: fixed;
+    z-index: 9004;
     right: 8px;
-    top:100px;
+    top:50%;
+    margin-top: -11px;
     width: 25px;
     height: 22px;
     background: url("../images/icon/next.png") 0 0 no-repeat;
@@ -89,7 +134,7 @@
     top: 10px;
     opacity: 0.4;
     filter: alpha(opacity=40);
-
+    z-index: 9004;
 }
 .m-lightbox-close{
     position: fixed;
@@ -101,6 +146,6 @@
     height: 27px;
     background: url("../images/icon/close.png") 0 0 no-repeat;
 }
-.z-closed{
+.z-closed,.z-closed .m-lightbox-page,.z-closed .m-lightbox-next,.z-closed .m-lightbox-prev,.z-closed .m-lightbox-mask{
     display: none;
 }
